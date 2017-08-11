@@ -1,0 +1,22 @@
+ctrl + alt + r 	=>打开默认浏览器 已经改成F12
+
+ctrl + B  => 查找文件
+ctrl + P  => 在整个项目里查找文件；
+
+
+ctrl + F  => 查找当前打开的文件的内容；
+shift + ctrl + F => 在整个项目中搜索；
+
+
+ctrl + o  => 打开一个文件
+ctrl + shift + o => 打开目录
+ctrl + \  => 显示隐藏目录树
+
+ctrl + D  => 选择与当前选定的单词相同的下一个单词；
+ctrl + G  => 快速定位到某一行
+
+
+ctrl + /  => 启用注释、关闭注释；
+
+atom 官网：
+http://flight-manual.atom.io/using-atom/sections/moving-in-atom/
