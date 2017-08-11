@@ -1,0 +1,3 @@
+<view class="cur-map" style="height: {{scrollHeight}}px;">
+  <map id="map" longitude="{{lng}}" latitude="{{lat}}" scale="14"  markers="{{markers}}" bindmarkertap="fnMarkertap" show-location style="width: 100%; height: {{scrollHeight}}px;"></map>
+</view>

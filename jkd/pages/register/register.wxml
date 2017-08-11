@@ -1,0 +1,21 @@
+ <view class="register-wrap">
+    <view class="phone">
+      <view class="phone-input">
+        <image src="../../images/icon-phone.png"></image>
+        <input type="digit" maxlength="11" placeholder="中国大陆地区手机号码" bindinput="fnPhone"/>
+      </view>
+      <view class="mess-input">
+        <image src="../../images/icon-code.png"></image>
+        <input type="digit" placeholder="短信验证码" maxlength="6" bindinput="fnCode"/>
+        <button class="{{ yzOnOff ? 'button-active' : '' }}" plain="true" hover-class="none" bindtap="fnCodeCheck">{{getCodeHtml}}</button>
+      </view>
+      <view class="set-input">
+        <image src="../../images/icon-password.png"></image>
+        <input placeholder="设置密码（6-16位数字或字母）" password="true" bindinput="fnPass" />
+      </view>
+    </view>
+    <view class="login-btn">
+      <button plain="true" hover-class="none" class="login-button {{ registerBtn ? 'login-button-cur' : '' }}">同意协议并注册</button>
+    </view>
+    <navigator url="../agreement/agreement" hover-class="none" class="agreement">《用户服务协议》</navigator>
+  </view>

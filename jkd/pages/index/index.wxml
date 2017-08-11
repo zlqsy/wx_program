@@ -1,0 +1,46 @@
+<import src="../../template/tmpGoodsList.wxml" />
+<view class="wrapper home">
+  <scroll-view scroll-y="true" style="height: {{scrollHeight}}px;" scroll-top="{{scrollTop}}" lower-threshold="50" upper-threshold="50"  bindscrolltoupper="fnScrollTop">
+
+    <!-- 定位 与 商品搜索 -->
+    <view class="pos-search">
+      <navigator class="pos" url="../address/address?source=home">
+        <image class="address-icon" src="../../images/address.png" />
+        <view class="pos-name">{{posName}}</view>
+        <view class="address-arrow"></view>
+      </navigator>
+      <navigator class="search" url="../search/search">
+        <view>搜索商品</view>
+        <image class="search-icon" src="../../images/search.png"></image>
+      </navigator>
+    </view>
+
+    <!-- 滑动组件 -->
+    <swiper class="swiper-wrap" indicator-dots autoplay circular>
+      <block wx:for="{{adList}}" wx:for-item="adItem">
+        <swiper-item>
+          <image src="{{adItem.img}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- 专题活动 -->
+    <view class="act-wrap">
+      <navigator url="../activity/activity" wx:for="{{actList}}" wx:for-item="actItem">
+        <image src="{{actItem.img}}"></image>
+      </navigator>
+    </view>
+
+    <!-- 周边热卖分割线 -->
+    <view class="goods-line">
+      <view class="line"></view>
+      <text>周边热卖，即可送达</text>
+    </view>
+    <view wx:if="{{hidden}}">
+      <template is="commonGoodsList" data="{{...goodsListResult}}"></template>
+    </view>
+  </scroll-view>
+
+  <!-- 在获取接口请求数据之前，显示加载中，之后显示下面 -->
+  <loading hidden="{{hidden}}">加载中...</loading>
+</view>

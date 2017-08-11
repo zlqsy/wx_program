@@ -1,0 +1,71 @@
+<scroll-view class="store" scroll-y="true" style="height: {{scrollHeight}}px;" bindscroll="fnScroll" scroll-top="{{scrollTop}}" bindscrolltolower="fnGetNextPage">
+  
+  <!-- 店铺信息 -->
+  <view class="store-info" >
+    <view class="store-title">
+      <view class="store-img" style="background-image: url({{shopInfo.image}})"></view>
+      <view class="store-specific">
+        <view class="store-name">
+          <text class="name">{{shopInfo.shop_name}}</text>
+        </view>
+        <view class="store-time">{{shopInfo.business_hours_from}}-{{shopInfo.business_hours_to}}</view>
+        <view class="store-other">
+          <text>{{shopInfo.minimum}}元起送</text>
+          <text class="store-line">|</text>
+          <text>{{shopInfo.free}}元免配送费</text>
+          <text class="store-line">|</text>
+          <text>{{distanceCalc}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="store-map">
+      <navigator url="../cur_map/cur_map?shop_id={{shopInfo.shop_id}}&shop_name={{shopInfo.shop_name}}&lat={{shopInfo.latitude}}&lng={{shopInfo.longitude}}&address={{shopInfo.address}}" class="map-address">
+        <image src="../../images/icon-address.png"></image>
+        <text>{{shopInfo.address}}</text>
+      </navigator>
+      <view class="map-tel" bindtap="fnTel">
+        <image src="../../images/icon-tel.png"></image>
+      </view>
+    </view>
+    <view class="store-sale" wx:if="{{shopInfo.is_compensation == 1}}">
+      <text>赔</text><text>已加入真品保障计划，支持先行赔付</text>
+    </view>
+    <view class="store-sale" wx:if="{{shopInfo.is_coupon == 1}}">
+      <text>券</text><text>支持使用优惠券</text>
+    </view>
+    <view class="store-sale" wx:if="{{shopInfo.is_online_pay == 1}}">
+      <text>付</text><text>支持在线支付</text>
+    </view>
+    <view class="store-sale" wx:if="{{shopInfo.is_invoice == 1}}">
+      <text>票</text><text>支持开发票</text>
+    </view>
+    <view class="store-sale" wx:if="{{shopInfo.is_card_pay == 1}}">
+      <text>卡</text><text>支持刷卡支付</text>
+    </view>
+  </view>
+
+  <!-- 店铺评论 -->
+  <view class="store-comment" wx:if="{{shopInfo.comment_count > 0}}">
+    <view class="comment-title">
+      <text>店铺评价</text>
+      <text>（共{{shopInfo.comment_count}}条）</text>
+      <text>{{shopInfo.star}}分</text>
+    </view>
+    <view class="comment-wrap">
+      <view class="comment-list" wx:if="{{commentInfoList.length > 0}}" wx:for="{{commentInfoList}}" wx:for-item="commentList">
+        <view class="comment-1">
+          <text>{{commentList.user_name}}</text>
+          <text>{{commentList.star}}分</text>
+        </view>
+        <view class="comment-2">
+          <text>{{commentList.content}}</text>
+          <text>{{commentList.create_time}}</text>
+        </view>
+      </view>
+
+      <view class="no-comment" wx:if="{{commentInfoList.length == 0}}">抱歉，暂无评论</view>
+
+    </view>
+  </view>
+</scroll-view>
+

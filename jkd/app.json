@@ -1,0 +1,57 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/address_add/address_add",
+    "pages/category/category",
+    "pages/mine/mine",
+    "pages/address/address",
+    "pages/address_list/address_list",
+    "pages/search/search",
+    "pages/activity/activity",
+    "pages/detail/detail",
+    "pages/shop/shop",
+    "pages/shop_info/shop_info",
+    "pages/cur_map/cur_map",
+    "pages/order/order",
+    "pages/login/login",
+    "pages/order_info/order_info",
+    "pages/register/register",
+    "pages/agreement/agreement",
+    "pages/getback/getback"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e43031",
+    "navigationBarTitleText": "酒快到",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/index.png",
+      "selectedIconPath": "images/index-cur.png"
+    },
+    {
+      "pagePath": "pages/category/category",
+      "text": "分类",
+      "iconPath": "images/cate.png",
+      "selectedIconPath": "images/cate-cur.png"
+    },
+    {
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "images/order.png",
+      "selectedIconPath": "images/order-cur.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "images/mine.png",
+      "selectedIconPath": "images/mine-cur.png"
+    }],
+    "color": "#999999",
+    "selectedColor": "#fd3846"
+  }
+}

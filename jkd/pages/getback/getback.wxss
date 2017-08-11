@@ -1,0 +1,91 @@
+.getback-step {
+    text-align: center;
+    padding: 20rpx;
+}
+.getback .step-1, .getback .step-arrow, .getback .step-2 {
+    display: inline-block;
+    color: #999999;
+}
+.getback .step-1 text:nth-of-type(1), .getback .step-2 text:nth-of-type(1) {
+    display: inline-block;
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 100%;
+    background-color: #999999;
+    color: #fff;
+    text-align: center;
+    line-height: 32rpx;
+    margin-right: 10rpx;
+}
+.getback .step-arrow {
+    margin: 0 10rpx;
+}
+.getback .step-active {
+    color:#fd3846;
+}
+.getback .step-active text:nth-of-type(1) {
+    background-color: #fd3846;
+}
+
+.phone, .password {
+    background-color: #fff;
+    border-bottom: 1rpx solid #dadada;
+}
+.phone .phone-input, .phone .mess-input, .password .phone-input, .password .mess-input {
+    padding: 20rpx 20rpx 20rpx 0;
+    margin-left: 60rpx; 
+    position: relative;
+}
+.phone .phone-input, .password .phone-input {
+   border-bottom: 1rpx solid #dadada;
+}
+.phone .phone-input image, .phone .mess-input image, .password .phone-input image, .password .mess-input image {
+    width: 44rpx;
+    height: 44rpx;
+    position: absolute;
+    top: 24rpx;
+    left: -48rpx;
+}
+.phone .phone-input input, .password .phone-input input, .password  .mess-input input {
+    display: inline-block;
+    width: 90%;
+    padding: 0 20rpx;
+}
+.phone .mess-input input {
+    display: inline-block;
+    width: 50%;
+    padding: 0 20rpx;
+}
+.phone .mess-input button {
+    width: 30%;
+    line-height: 56rpx;
+    border-color: #dadada;
+    font-size: 28rpx;
+    color: #999999;
+    position: absolute;
+    top: 16rpx;
+    right: 20rpx;
+    pointer-events: none;
+}
+.phone .mess-input .button-active {
+    color: #ff961a;
+    border-color: #ff961a;
+    pointer-events: auto;
+}
+
+.login-btn {
+    padding: 40rpx 20rpx 0;
+}
+.login-btn .login-button {
+    height: 80rpx;
+    line-height: 80rpx;
+    border: none;
+    background-color: #bfbfbf;
+    color: #fff;
+    font-size: 28rpx;
+    pointer-events: none;
+}
+.login-btn .login-button-cur {
+    background-color: #fd3846;
+    pointer-events: auto;
+}

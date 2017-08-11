@@ -1,0 +1,204 @@
+.order-info {
+
+}
+
+.order-log {
+    background-color: #fff;
+}
+.log-item {
+    margin-left: 60rpx;
+    border-bottom: 1rpx solid #dadada;
+    position: relative;
+    padding: 20rpx 0;
+    line-height: 1.5;
+}
+.log-item::before{
+    position: absolute;
+    top: 20rpx;
+    left: -40rpx;
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    background-color: #ccc;
+    border-radius: 100%;
+    z-index: 2;
+    box-shadow: 0 0 2rpx 2rpx #ccc;
+}
+.log-item::after{
+    position: absolute;
+    top: 20rpx;
+    left: -30rpx;
+    content: '';
+    width: 1rpx;
+    height: 100%;
+    background-color:#dadada;
+}
+.log-item:last-child {
+    border: none;
+}
+.log-item .content {
+    color: #666;
+}
+.log-item .time {
+    color: #999;
+}
+.log-end .content, .log-end .time {
+    color: #ff961a;
+}
+.log-end::before {
+    background-color: #ff961a;
+    box-shadow: 0 0 2rpx 2rpx #ff961a;
+}
+.log-end::after {
+    content: '';
+    width: 0;
+    height: 0;
+}
+
+
+.order-comment {
+    padding: 20rpx;
+}
+.order-comment .star {
+    margin-bottom: 10rpx;
+}
+.order-comment .star-title {
+    display: inline-block;
+    vertical-align: middle;
+}
+.order-comment .star-btn {
+    display: inline-block;
+    margin-left: 10rpx;
+    vertical-align: middle;
+}
+.order-comment .star-default  {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 4rpx;
+    background: url(../../images/icon-star.png) no-repeat center center;
+    background-size: 40rpx 40rpx;
+}
+.order-comment .star-cur {
+    background: url(../../images/icon-star-cur.png) no-repeat center center;
+    background-size: 40rpx 40rpx;
+}
+.order-comment .comment-area {
+    background-color: #fff;
+    width: 100%;
+    height: 200rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+.order-comment .comment-btn {
+    font-size: 28rpx;
+    background-color: #fd3846;
+    border-color: #fd3846;
+    color: #fff;
+}
+
+
+.order-message {
+    background: #fff;
+    border-top: 1rpx solid #dadada;
+    border-bottom: 1rpx solid #dadada;
+    margin-top: 10rpx;
+}
+.order-message .message-title {
+    padding: 20rpx;
+    border-bottom: 1rpx solid #dadada;
+    font-size: 32rpx;
+}
+.order-message .message-item {
+    padding-left: 20rpx;
+}
+.order-message .item {
+    padding: 16rpx 16rpx 16rpx 0;
+    border-bottom: 1rpx solid #dadada;
+}
+.order-message .item:last-child {
+    border: none;
+}
+.receive {
+    overflow: hidden;
+}
+.receive .rec-tit {
+    float: left;
+}
+.receive .rec-info {
+    float: left;
+}
+.receive .rec-info text {
+    display: block;
+    line-height: 1.3
+}
+
+
+.goods-detail, .score  {
+    margin-top: 40rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #dadada;
+    border-bottom: 1rpx solid #dadada;
+}
+.goods-detail .goods-title {
+    padding: 20rpx;
+    border-bottom: 1rpx solid #dadada;
+    font-size: 32rpx;
+}
+.goods-detail .detail {
+    margin-left: 20rpx;
+}
+.goods-detail .content,.goods-detail .freight {
+    border-bottom: 1rpx solid #dadada;
+    padding: 16rpx 16rpx 16rpx 0;
+    overflow: hidden;
+}
+.goods-detail .content text:nth-of-type(1) {
+    float: left;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.goods-detail .content text:nth-of-type(2) {
+    float: left;
+    width: 15%;
+    text-align: right;
+}
+.goods-detail .content text:nth-of-type(3) {
+    float: left;
+    width: 15%;
+    text-align: right;
+}
+.goods-detail .freight text:nth-of-type(1) {
+    float: left;
+}
+.goods-detail .freight text:nth-of-type(2) {
+    float: right;
+}
+.goods-detail .total {
+    text-align: right;
+    padding: 20rpx;
+}
+.goods-detail .total text:nth-of-type(2) {
+    color:#fd3846;
+}
+
+
+.score .score-title {
+    border-bottom: 1rpx solid #dadada;
+    padding: 20rpx;
+    overflow: hidden;
+}
+.score .score-title text:nth-of-type(1) {
+    float: left;
+    font-size: 32rpx;
+}
+.score .score-title text:nth-of-type(2) {
+    float: right;
+    color: #fd3846;
+}
+.score .score-content {
+    padding: 20rpx;
+}

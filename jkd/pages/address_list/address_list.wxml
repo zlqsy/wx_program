@@ -1,0 +1,21 @@
+<view class="address-list">
+  <navigator class="add" url="../address_add/address_add" hover-class="none">+ 新增收货地址</navigator>
+  <view class="list" wx:if="{{addressList.shoppingAddressList.length > 0}}">
+    <view class="list-title">我的收货地址</view>
+    <view class="address-item" wx:for="{{addressList.shoppingAddressList}}" wx:for-item="item">
+      <view class="item-left">
+        <view class="address-info">
+          <text>{{item.address}}</text>
+          <text>{{item.street}}</text>
+        </view>
+        <view class="address-tel">
+          <text>{{item.mobile}}</text>
+          <text>{{item.consignee}}</text>
+        </view>
+      </view>
+      <navigator class="item-right" url="" hover-class="none">
+        <view class="edit"><image src="../../images/icon-edit.png"></image></view>
+      </navigator>
+    </view>
+  </view>
+</view>

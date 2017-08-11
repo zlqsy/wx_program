@@ -1,0 +1,33 @@
+<view class="mine">
+
+  <!-- 登录、注册入口 -->
+  <navigator url="../login/login" hover-class="none">
+    <view class="mine-title">
+      <text class="txt">登录/注册</text>
+      <text class="arrow"></text>
+    </view>
+  </navigator>
+
+  <!-- 优惠券、地址、积分入口 -->
+  <view class="func-entry">
+    <navigator url="" class="coupon" hover-class="none">
+      <image class="icon-coupon" src="../../images/icon-coupon.png"></image>
+      <text>优惠券</text>
+    </navigator>
+    <navigator url="../address_list/address_list" class="address" hover-class="none">
+      <image class="icon-add" src="../../images/icon-add.png"></image>
+      <text>收货地址管理</text>
+    </navigator>
+    <navigator url="" class="news" hover-class="none">
+      <image class="icon-news" src="../../images/icon-news.png"></image>
+      <text>消息</text>
+    </navigator>
+  </view>
+
+  <!-- 其他功能入口 -->
+  <view class="kf-entry" bindtap="fnTel">
+    <image src="../../images/icon-kf.png"></image>
+    <text class="tel">客服电话 400-616-9999</text>
+    <text class="arrow"></text>
+  </view>
+</view>

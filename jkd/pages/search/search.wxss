@@ -1,0 +1,136 @@
+.search-box {
+    background-color: #e43031;
+    padding: 20rpx;
+    overflow: hidden;
+}
+.search-box input {
+    width: 85%;
+    float: left;
+    background-color: #fff;
+    border-radius: 6rpx;
+    padding: 0 20rpx 0 50rpx;
+    box-sizing: border-box;
+    position: relative;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.search-box input::before {
+    content: '';
+    position: absolute;
+    top: 14rpx;
+    left: 10rpx;
+    width: 30rpx;
+    height: 30rpx;
+    background: url(../../images/search.png) no-repeat center center;
+    background-size: contain;
+}
+.search-box .search-btn {
+    float: left;
+    width: 15%;
+    text-align: center;
+    color: #fff;
+    padding: 10rpx 0;
+}
+
+.hot {
+    padding: 20rpx;
+}
+.hot-word {
+    display: inline-block;
+    padding: 10rpx 16rpx;
+    font-size: 24rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.nearby-shop {
+    
+}
+.nearby-shop .nearby-tips {
+    padding: 20rpx;
+    color: #999;
+}
+.nearby-shop .shop {
+    background-color: #fff;
+    margin-bottom: 30rpx;
+}
+.nearby-shop .shop-disabled {
+    opacity: 0.5;
+}
+.nearby-shop .shop-name {
+    border-bottom: 1rpx solid #e5e5e5;
+    padding: 20rpx;
+    overflow: hidden;
+}
+.nearby-shop .shop-name image {
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+    margin-right: 10rpx;
+}
+.nearby-shop .shop-name text:nth-of-type(1) {
+    float: left;
+    line-height: 1.5;
+}
+.nearby-shop .shop-name text:nth-of-type(2) {
+    float: right;
+    color: #999;
+}
+
+.nearby-shop .goods-list {
+    margin-left: 140rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    margin-bottom: 16rpx;
+}
+.nearby-shop .goods-link {
+    position: relative;
+}
+.nearby-shop .goods-img {
+    position: absolute;
+    top: 10rpx;
+    left: -120rpx;
+}
+.nearby-shop .goods-img image {
+    width: 100rpx;
+    height: 100rpx;
+    border: 1rpx solid #e5e5e5;
+}
+.nearby-shop .goods-info {
+    padding: 20rpx 20rpx 20rpx 0;
+}
+.nearby-shop .goods-info .goods-title {
+    margin-bottom: 10rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.nearby-shop .goods-info .goods-price {
+    color:#e43031;
+}
+
+.nearby-shop .shop-total {
+    border-top: 1rpx solid #e5e5e5;
+    padding: 20rpx;
+    overflow: hidden;
+}
+.nearby-shop .shop-total text {
+    float: left;
+}
+.nearby-shop .shop-total .go-shop {
+    float: right;
+    position: relative;
+    margin-right: 30rpx;
+}
+.nearby-shop .shop-total .go-shop::after {
+    content: '';
+    position: absolute;
+    top: 8rpx;
+    right: -20rpx;
+    width: 16rpx;
+    height: 16rpx;
+    border-top: 1rpx solid #999;
+    border-right: 1px solid #999;
+    transform: rotate(45deg);
+}

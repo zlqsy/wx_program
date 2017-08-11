@@ -1,0 +1,87 @@
+/* 店铺信息入口 */
+.shop {
+  overflow: hidden;
+}
+.shop .shop-info {
+  position: relative;
+  padding: 20rpx;
+  background-color:#e43031;
+  color: #fff;
+}
+.shop-info .shop-name {
+    margin-bottom: 8rpx;
+    padding-left: 8rpx;
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.shop-info .shop-other {
+    font-size: 24rpx;
+}
+.shop-info .shop-other text {
+    padding: 0 8rpx;
+}
+.shop-info .shop-other text:nth-of-type(1), .shop-info .shop-other text:nth-of-type(2) {
+    border-right: 1rpx solid #fff;
+}
+.shop-info .shop-arrow {
+    width: 24rpx;
+    height: 24rpx;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* 子导航 */
+.assortment-nav {
+  background-color: #fff;
+  position: relative;
+  height: 80rpx;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.assortment-nav .assort-wrap {
+  width: 20000rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.assortment-nav text {
+  float: left;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.assortment-nav .assortCur {
+  color: #e43031;
+  border-bottom: 1px solid #e43031;
+}
+
+
+/* 店铺 商品列表 */
+.shop-list {
+  position: absolute;
+  top: 188rpx;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+.shop-list .options {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+}

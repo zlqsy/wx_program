@@ -1,0 +1,92 @@
+<view class="order-info">
+
+    <!-- 物流信息 -->
+    <view class="order-log" wx:if="{{orderInfo.orderLogList.length > 0}}">
+        <view class="log-item {{ logItem.status == 4 ? 'log-end' : '' }}" wx:for="{{orderInfo.orderLogList}}" wx:for-item="logItem">
+            <view class="content">{{logItem.log_info}}</view>
+            <view class="time">{{logItem.create_time}}</view>
+            <view class="content" wx:if="{{logItem.status == 0}}">订单待商户确认中，请耐心等候......</view>
+            <view class="content" wx:if="{{logItem.status == 1}}">店主正飞奔在路上~</view>
+            <view class="content" wx:if="{{logItem.status == 4 && logItem.log_desc}}">{{logItem.log_desc}}</view>
+        </view>
+    </view>
+
+    <!-- 评论 -->
+    <view class="order-comment" wx:if="{{orderInfo.status == 4}}">
+        <view class="star">
+            <text class="star-title">点评一下</text>
+            <view class="star-btn">
+                <text class="star-default {{ idx <= curStar ? 'star-cur' : ''}} " data-index="{{idx}}" wx:for="{{starNum}}" wx:for-index="idx" bindtap="fnGetStar"></text>
+            </view>
+        </view>
+        <textarea class="comment-area" placeholder="给店家一个评论吧，可以供其他消费者参考哦~" />
+        <button class="comment-btn" hover-class="none">提交评论</button>
+    </view>
+
+    <!-- 订单信息 -->
+    <view class="order-message">
+        <view class="message-title">订单信息</view>
+        <view class="message-item">
+            <view class="number item">
+                <text>订单编号：</text>
+                <text>{{orderInfo.order_sn}}</text>
+            </view>
+            <view class="shop item">
+                <text>下单店铺：</text>
+                <text>{{orderInfo.shoppingCartShop.shop_name}}</text>
+            </view>
+            <view class="receive item">
+                <text class="rec-tit">收货信息：</text>
+                <view class="rec-info">
+                    <text>{{orderInfo.shoppingAddress.address}} {{orderInfo.shoppingAddress.street}}</text>
+                    <text>{{orderInfo.shoppingAddress.mobile}}</text>
+                    <text>{{orderInfo.shoppingAddress.consignee}}</text>
+                </view>
+            </view>
+            <view class="pay item">
+                <text>支付方式：</text>
+                <text wx:if="{{orderInfo.pay_methods == 1}}">在线支付-微信支付</text>
+                <text wx:elif="{{orderInfo.pay_methods == 2}}">现金支付</text>
+                <text wx:else>刷卡支付</text>
+            </view>
+            <view class="remark item">
+                <text>备注信息：</text>
+                <text wx:if="{{orderInfo.order_remark != ''}}">{{orderInfo.order_remark}}</text>
+                <text wx:else>无</text>
+            </view>
+            <view class="item" wx:if="{{orderInfo.invoice_top != ''}}">
+                <text>发票抬头：</text>
+                <text>{{orderInfo.invoice_top}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 商品明细 -->
+    <view class="goods-detail">
+        <view class="goods-title">商品明细</view>
+        <view class="detail" wx:if="{{orderInfo.buyProductList.length > 0}}">
+            <view class="content" wx:for="{{orderInfo.buyProductList}}" wx:for-item="proList">
+                <text>{{proList.goods_name}}</text>
+                <text>×{{proList.buy_no}}</text>
+                <text>¥{{proList.buy_no * proList.goods_price}}</text>
+            </view>
+            <view class="freight">
+                <text>配送费</text>
+                <text>¥{{orderInfo.lgs_price}}</text>
+            </view>
+            <view class="total">
+                <text>合计：</text>
+                <text>{{orderInfo.paid_amount}}元</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 我的评分 -->
+    <view class="score" wx:if="{{orderInfo.status == 7}}">
+        <view class="score-title">
+            <text>我的评分</text>
+            <text>{{orderInfo.orderCommentMap.star}}分</text>
+        </view>
+        <view class="score-content">{{orderInfo.orderCommentMap.message}}</view>
+    </view>
+</view>

@@ -1,0 +1,40 @@
+<view class="address">
+    <view class="change-wrap">
+        <view class="change-add">
+            <image src="../../images/search.png"></image>
+            <input bindinput="fnSearchLocation" placeholder-style="color: #999999;" placeholder="请输入地址" focus="{{focus}}" />
+            <!-- <view bindtap="fnClear" class="add-clear"><text>×</text></view> -->
+        </view>
+    </view>
+    <button class="location-btn" bindtap="fnLocation" wx:if="{{noLocation}}">
+        <image src="../../images/location.png"></image>
+        <text>{{locationtxt}}</text>
+    </button>
+    <view class="search-wrap" wx:if="{{!noLocation}}">
+        <block wx:if="{{!noItem}}" wx:for="{{searchItem}}" >
+            <view class="search-item" bindtap="fnUpdateLocation" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}" data-address="{{item.address}}" data-add-name="{{item.name}}">
+                <text class="search-name">{{item.name}}</text>
+                <text class="search-location">{{item.address}}</text>
+            </view>
+        </block>
+        <view wx:if="{{noItem}}">没有找到相关地址</view>
+    </view>
+</view>
+<view class="address-list" wx:if="{{noLocation && source == 'home'}}">
+  <navigator class="add" url="../address_add/address_add" hover-class="none">+ 新增收货地址</navigator>
+  <view class="list" wx:if="{{addressList.shoppingAddressList.length > 0}}">
+    <view class="list-title">我的收货地址</view>
+    <view class="address-item" wx:for="{{addressList.shoppingAddressList}}" wx:for-item="item">
+      <view class="item-left">
+        <view class="address-info">
+          <text>{{item.address}}</text>
+          <text>{{item.street}}</text>
+        </view>
+        <view class="address-tel">
+          <text>{{item.mobile}}</text>
+          <text>{{item.consignee}}</text>
+        </view>
+      </view>
+    </view>    
+  </view>
+</view>

@@ -1,0 +1,76 @@
+<import src="../../template/tmpGoodsList.wxml" />
+<view class="cate">
+
+  <!-- 分类、商家头部 -->
+  <view class="cate-title">
+    <view class="cate-tab">
+      <block wx:for="{{cateTitle}}">
+        <text class="{{ cateCur == index ? 'tab-cur': '' }}" bindtap="fnChangeTab" data-index="{{index}}">{{item}}</text>
+      </block>
+    </view>
+    <navigator wx:if="{{cateCur == 0}}" class="cate-search" url="../search/search">
+      <image src="../../images/search-cate.png"></image>
+    </navigator>
+  </view>
+
+  <!-- 分类 -->
+  <view class="assortment-tab" wx:if="{{cateCur == 0}}">
+    <view class="assortment-nav" wx:if="{{cateNav.list.length > 0}}">
+      <view class="assort-wrap">
+        <text class="{{cateNavList.category_id == cateNavCur ? 'assortCur' : ''}}" wx:for="{{cateNav.list}}" wx:for-item="cateNavList" data-category-id="{{cateNavList.category_id}}" bindtap="fnGetCateList">{{cateNavList.goods_type_name}}</text>
+      </view>
+    </view>
+    <view class="assortment-content">
+      <template is="commonGoodsList" data="{{...ambitusGoodsItem}}"></template>
+    </view>
+  </view>
+
+  <!-- 商家 -->
+  <view class="business-tab" wx:if="{{cateCur == 1}}">
+
+    <!-- 周边有商家 -->
+    <view class="bussiness-wrap">
+      <view class="bussiness-ul">
+        <view class="bussiness-item {{ (shopList.is_busy == 1 || shopList.is_business == 0) ? 'shop-disabled' : ''}}" wx:if="{{shopResult.list.length > 0}}" wx:for="{{shopResult.list}}" wx:for-item="shopList">
+          <navigator url="../shop/shop?shopId={{shopList.shop_id}}">
+            <view class="bussiness-img" style="background-image: url({{shopList.image}})"></view>
+            <view class="business-txt">
+              <view class="bus-tit">
+                <text>{{shopList.shop_name}}</text>
+              </view>
+              <text class="shop-ty" wx:if="{{shopList.shop_type == 1}}">体验店</text>
+              <text class="bus-score">{{shopList.star}}分</text>
+              <view class="bus-sales">
+                <text wx:if="{{shopList.is_compensation == 1}}">赔</text>
+                <text wx:if="{{shopList.is_coupon == 1}}">券</text>
+                <text wx:if="{{shopList.is_online_pay == 1}}">付</text>
+                <text wx:if="{{shopList.is_invoice == 1}}">票</text>
+                <text wx:if="{{shopList.is_card_pay == 1}}">卡</text>
+              </view>
+              <view class="bus-busy" wx:if="{{shopList.is_busy == 1}}">
+                <text>店铺繁忙</text>
+              </view>
+              <view class="bus-rest" wx:if="{{shopList.is_business == 0}}">
+                <text>店铺休息中</text>
+              </view>
+              <view class="bus-number">共售出{{shopList.saleNum}}件商品</view>
+              <view class="bus-info">
+                <text>{{shopList.minimum}}元起送</text>
+                <text class="bus-vertical-line">|</text>
+                <text>满{{shopList.free}}元免配送费</text>
+                <text class="bus-vertical-line">|</text>
+                <text>{{shopList.distance}}m</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+    <!-- 周边无商家 -->
+    <view class="no-business" wx:if="{{shopResult.list.length == 0}}">
+      <image src="../../images/error_1.png"></image>
+      <text>呀，您附近还没有店铺呢~</text>
+    </view>
+  </view>
+</view>

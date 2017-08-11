@@ -1,0 +1,114 @@
+<view class="shop">
+
+  <!-- 点击查看店铺信息 -->
+  <view class="shop-info">
+    <navigator url="../shop_info/shop_info?shop_id={{cateNav.shopInfo.shop_id}}" hover-class="none">
+      <view class="shop-name">
+        <text>{{cateNav.shopInfo.shop_name}}</text>
+      </view>
+      <view class="shop-other">
+        <text>{{cateNav.shopInfo.minimum}}元起送</text>
+        <text>{{rangeCalc}}</text>
+        <text>共售出{{cateNav.shopInfo.count}}件商品</text>
+      </view>
+      <view class="shop-arrow"></view>
+    </navigator>
+  </view>
+
+  <!-- 子导航分类 -->
+  <view class="assortment-nav" wx:if="{{cateNav.list.length > 0}}">
+    <view class="assort-wrap">
+      <text class="{{cateNavList.category_id == cateNavCur ? 'assortCur' : ''}}" wx:for="{{cateNav.list}}" wx:for-item="cateNavList" data-category-id="{{cateNavList.category_id}}" bindtap="fnGetCateList">{{cateNavList.goods_type_name}}</text>
+    </view>
+  </view>
+
+  <!-- 店铺商品列表 -->
+  <view class="shop-list">
+    <view class="has-service" wx:if="{{shopList.goodsList.length > 0}}">
+      <view class="goods-wrap">
+        <view class="goods-item" wx:for="{{shopList.goodsList}}" wx:for-item="listName">
+          <navigator class="item-link" url="../detail/detail?shop_id={{listName.shop_id}}&goods_id={{listName.goods_id}}">
+            <view class="item-img" style="background-image: url('{{listName.goods_thumb}}')"></view>
+            <block wx:if="{{ listName.min_price > 0 && listName.pact_list.length > 0 }}" wx:for="{{listName.pact_list}}" wx:for-item="pactList">
+              <view class="sale-tj" wx:if="{{ pactList.iconUrl != '' && pactList.act_type == 8}}" style="background-image: url('{{pactList.iconUrl}}')"></view>
+            </block>
+            <view class="item-text1">
+              <text class="item-zg" wx:if="{{listName.stock != -1}}">直供</text>
+              <text class="item-title">{{listName.goods_name}}</text>
+            </view>
+            <view class="item-text2">
+              <text class="item-price">¥{{listName.goods_price}}</text>
+              <text class="item-del" wx:if="{{listName.min_price != -1}}">¥{{listName.min_price}}</text>
+              <text class="item-bh" wx:if="{{listName.stock == 0}}">补货中</text>
+            </view>
+          </navigator>
+          <view class="options" wx:if="{{listName.stock != 0}}">
+            <view class="icon-sub">
+              <view class="sub-img">
+                <view class="sub-jq"></view>
+              </view>
+            </view>
+            <text class="icon-num">123</text>
+            <view class="icon-add">
+              <view class="add-img">
+                <view class="add-tj1"></view>
+                <view class="add-tj2"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 遮罩层 -->
+<view class="mask" wx:if="{{showCartList}}" bindtap="fnCloseCartList"></view>
+
+<!-- 购物车列表 -->
+<view class="cart-list" wx:if="{{showCartList}}">
+  <view class="list-title">
+    <text class="tit">购物车</text>
+    <view class="clear"><image src="../../images/icon-clear.png"></image></view>
+  </view>
+  <view class="list-item" wx:if="{{cartResult.buyProductList.length > 0}}">
+    <view class="item-wrap"  wx:for="{{cartResult.buyProductList}}" wx:for-item="cartItem">
+      <view class="item-title">{{cartItem.goods_name}}</view>
+      <view class="item-price">¥{{cartItem.goods_price}}</view>
+      <view class="options">
+        <view class="icon-sub">
+          <view class="sub-img">
+            <view class="sub-jq"></view>
+          </view>
+        </view>
+        <text class="icon-num">123</text>
+        <view class="icon-add">
+          <view class="add-img">
+            <view class="add-tj1"></view>
+            <view class="add-tj2"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+   
+  </view>
+</view>
+
+<!-- 底部购物车 -->
+<view class="footer-cart">
+  <view class="footer-left">
+    <view class="icon-cart" bindtap="fnShowCartList">
+      <image src="../../images/icon-cart.png"></image>
+      <view class="cart-dot">39</view>
+    </view>
+    
+  </view>
+  <view class="footer-middle">
+    <view class="total-price">¥130.00</view>
+    <view class="cart-freight">满{{cartResult.shoppingCartShop.free}}元免配送费</view>
+  </view>
+  <view class="footer-right">
+    <text class="cart-settle" style="display: none;">去结算</text>
+    <text class="cart-send" >还差¥20起送</text>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+.agreement-wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    font-size: 24rpx;
+}
+
+.agree-h2 {
+    display: block;
+    padding: 20rpx;
+    font-weight: bold;
+}
+.agree-section {
+    background-color: #fff;
+}
+.agree-section .agree-title {
+    display: block;
+    padding: 20rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    border-top: 1rpx solid #dadada;
+    border-bottom: 1rpx solid #dadada;
+    background-color: #f4f4f4;
+}
+.agree-section  .agree-content {
+    padding: 20rpx;
+    line-height: 1.8;
+}
+.agree-section  .agree-content text {
+    display: block;
+    margin-bottom: 10rpx;
+}

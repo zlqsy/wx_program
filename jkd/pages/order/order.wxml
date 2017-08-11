@@ -1,0 +1,27 @@
+<view class="order-no" wx:if="{{orderList.length == 0 }}">暂无订单</view>
+
+<view class="order" wx:if="{{orderList.length > 0}}">
+    <navigator url="../order_info/order_info?order_id={{order.order_id}}&shop_id={{order.shop_id}}" hover-class="none" wx:for="{{orderList}}" wx:for-item="order">
+        <view class="item-time">{{order.create_time}}</view>
+        <view class="item">
+            <view class="info-1">
+                <text class="state">{{order.stateName}}</text>
+                <text class="shop-name">{{order.shop_name}}</text>
+            </view>
+            <view class="info-2">
+                <view class="detail" wx:for="{{order.orderProductList}}" wx:for-item="productList" wx:for-index="idx" wx:if="{{idx < 2}}">
+                    <text>{{productList.pro_name}}</text>
+                    <text>x{{productList.pro_price}}</text>
+                    <text>￥{{productList.buy_no}}</text>
+                </view>
+            </view>
+            <view class="info-3">
+                <text>共{{order.orderProductList.length}}件</text>
+                <text>￥{{order.paid_amount}}</text>
+            </view>
+            <view wx:if="{{order.order_status == 4}}" class="evaluate"><text>去评价</text></view>
+        </view>
+    </navigator>
+
+</view>
+

@@ -1,0 +1,145 @@
+
+.store-info {
+  background-color: #fff;
+  border: 1rpx solid #dadada;
+}
+.store-info .store-title {
+  padding: 20rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #dadada;
+ }
+.store-info .store-img {
+  float: left;
+  width: 28%;
+  padding-top: 25%;
+  margin-right: 2%;
+  background: url(../../images/shop-jkd.png) no-repeat 50% top;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.store-info .store-specific {
+  float: left;
+  width: 70%;
+  position: relative;
+}
+.store-info .name {
+  font-size: 32rpx;
+  line-height: 1.5;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.store-info .store-time, .store-info .store-other{
+  margin-bottom: 8rpx;
+  color: #666;
+}
+
+
+.store-info .store-map {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1rpx solid #dadada;
+}
+.store-info .map-address {
+  width: 80%;
+  float: left;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 24rpx;
+}
+.store-info .map-tel {
+  width: 20%;
+  float: right;
+  margin: 10rpx 0;
+  box-sizing: border-box;
+  text-align: center;
+  border-left: 1rpx solid #dadada;
+  height: 48rpx;
+  line-height: 48rpx;
+}
+.store-info .map-address image {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+.store-info .map-tel image {
+   width: 40rpx;
+   height: 40rpx;
+}
+.store-info .store-sale {
+  padding: 20rpx 20rpx 20rpx 0;
+  margin-left: 20rpx;
+  border-bottom: 1rpx solid #dadada;
+  font-size: 24rpx;
+}
+.store-info .store-sale:last-child {
+  border: none;
+}
+.store-info .store-sale text:nth-of-type(1) {
+  color: #448aca;
+  border: 1rpx solid #448aca;
+  padding: 2rpx;
+  border-radius: 2rpx;
+  margin-right: 8rpx;
+}
+
+
+
+.store-comment .comment-title {
+  overflow: hidden;
+  padding: 20rpx;
+}
+.store-comment .comment-title text:nth-of-type(1) {
+  float: left;
+}
+.store-comment .comment-title text:nth-of-type(2) {
+  float: left;
+  color: #999;
+}
+.store-comment .comment-title text:nth-of-type(3) {
+  float: right;
+}
+.store-comment .comment-wrap {
+  border-top: 1rpx solid #dadada;
+  border-bottom: 1rpx solid #dadada;
+  background-color: #fff;
+}
+.store-comment  .no-comment {
+  text-align: center;
+  padding: 20rpx;
+}
+.store-comment .comment-list {
+  padding: 20rpx 20rpx 20rpx 0;
+  margin-left: 20rpx;
+  border-bottom: 1rpx solid #dadada;
+}
+.store-comment .comment-list:last-child {
+  border: none;
+}
+.store-comment .comment-1 {
+  overflow: hidden;
+  padding-bottom: 8rpx;
+}
+.store-comment .comment-1 text:nth-of-type(1) {
+  float: left;
+  color: #999;
+}
+.store-comment .comment-1 text:nth-of-type(2) {
+  float: right;
+  color: #fd3846;
+}
+.store-comment .comment-2 {
+  overflow: hidden;
+}
+.store-comment .comment-2 text:nth-of-type(1) {
+  float: left;
+  width: 75%;
+}
+.store-comment .comment-2 text:nth-of-type(2) {
+  float: right;
+  width: 25%;
+  color: #999;
+  text-align: right;
+}
+

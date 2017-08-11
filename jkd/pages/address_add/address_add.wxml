@@ -1,0 +1,25 @@
+<view class="address-wrap">
+  <view class="address-add">
+  <view class="address item">
+    <text class="address-tit">送货地址</text>
+    <navigator url="../address/address?source=add" class="address-link" hover-class="none">
+      <text></text>
+      <input placeholder="请选择大楼、小区或其他" disabled="true" value="{{addValue}}" />
+      <text></text>
+    </navigator>
+  </view>
+  <view class="house item">
+    <text>门牌号</text>
+    <input placeholder="详情门牌号、建筑、楼层、室" value="{{houseValue}}" bindinput="fnHouseValue"/>
+  </view>
+  <view class="phone item">
+    <text>手机号</text>
+    <input placeholder="配送人员联系您的手机号" maxlength="11" value="{{phoneValue}}" bindinput="fnPhoneValue" />
+  </view>
+  <view class="contact item">
+    <text>联系人</text>
+    <input placeholder="您的姓名" value="{{contactValue}}" bindinput="fnContactValue" />
+  </view>
+</view>
+<view class="save-btn" bindtap="fnNewlyAdd"><button class="save">保存</button></view>
+</view>

@@ -1,0 +1,224 @@
+.cate {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cate .cate-title {
+  width: 100%;
+  height: 60rpx;
+  padding: 20rpx;
+  background-color: #e43031;
+}
+
+.cate .cate-tab {
+  width: 300rpx;
+  border: 1rpx solid #fff;
+  border-radius: 4rpx;
+  color: #fff;
+  margin: 0 auto;
+  font-size: 28rpx;
+}
+
+.cate .cate-tab text {
+  display: inline-block;
+  width: 150rpx;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.cate .cate-tab .tab-cur {
+  background-color: #fff;
+  color: #e43031;
+}
+
+.cate .cate-search {
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+}
+
+.cate .cate-search image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/*
+ * @分类
+*/
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.assortment-nav {
+  background-color: #fff;
+  position: relative;
+  height: 80rpx;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.assortment-nav .assort-wrap {
+  width: 20000rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.assortment-nav text {
+  float: left;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.assortment-nav .assortCur {
+  color: #e43031;
+  border-bottom: 1px solid #e43031;
+}
+
+.assortment-content {
+  position: absolute;
+  top: 180rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*
+ * @商家
+*/
+
+.business-tab {
+  width: 100%;
+  position: absolute;
+  top: 100rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.bussiness-wrap .bussiness-ul {
+  background-color: #fff;
+}
+
+.bussiness-wrap .bussiness-item {
+  padding: 20rpx 10rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #dadada;
+}
+
+.bussiness-wrap .shop-disabled {
+  opacity: 0.5;
+  background-color: #f4f4f4;
+}
+
+.bussiness-wrap .bussiness-img {
+  float: left;
+  width: 28%;
+  padding-top: 25%;
+  margin-right: 2%;
+  background: url(../../images/shop-jkd.png) no-repeat 50% top;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.bussiness-wrap .business-txt {
+  float: left;
+  width: 70%;
+  position: relative;
+}
+
+.bussiness-wrap .bus-tit {
+  font-size: 30rpx;
+  margin-right: 64rpx;
+  position: relative;
+}
+
+.bussiness-wrap .shop-ty {
+  position: absolute;
+  top: 40rpx;
+  right: 4rpx;
+  background-color: #e43031;
+  font-size: 20rpx;
+  color: #fff;
+  padding: 2rpx 4rpx;
+  -webkit-border-radius: 20rpx;
+  border-radius: 20rpx;
+}
+
+.bussiness-wrap .bus-score {
+  font-size: 24rpx;
+  color: #e43031;
+  position: absolute;
+  top: 0;
+  right: 10rpx;
+}
+
+.bussiness-wrap .bus-sales text {
+  font-size: 24rpx;
+  color: #448aca;
+  border: 1rpx solid #448aca;
+  -webkit-border-radius: 4rpx;
+  border-radius: 4rpx;
+  padding: 1rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+
+.bussiness-wrap .bus-busy, .bussiness-wrap .bus-rest {
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #e43031;
+  width: 160rpx;
+  padding: 4rpx 0;
+  text-align: center;
+  border-radius: 8rpx;
+}
+
+.bussiness-wrap .bus-rest {
+  background-color: #448aca;
+}
+
+.bussiness-wrap .bus-number, .bussiness-wrap .bus-info {
+  font-size: 24rpx;
+  color: #999;
+}
+.bussiness-wrap .bus-vertical-line {
+    padding: 0 4rpx;
+}
+.bussiness-wrap .bus-tit, .bussiness-wrap .bus-sales, .bussiness-wrap .bus-busy,
+.bussiness-wrap .bus-rest, .bussiness-wrap .bus-number {
+  margin-bottom: 4rpx;
+}
+
+.no-business {
+  margin: 100rpx auto;
+  text-align: center;
+}
+
+.no-business image {
+  display: block;
+  width: 190rpx;
+  height: 205rpx;
+  margin: 0 auto 20rpx;
+}
+
+.no-business text {
+  display: block;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 1.5;
+}

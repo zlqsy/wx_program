@@ -1,0 +1,334 @@
+/**app.wxss**/
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  color: #505050;
+  font-size: 28rpx;
+}
+
+
+/** 首页\分类 商品列表公共部分 start **/
+.goods-wrap {
+  padding: 10rpx;
+  overflow: hidden;
+}
+
+.goods-item {
+  float: left;
+  width: 50%;
+  padding: 10rpx;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.goods-item .item-link {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+.goods-item .item-img {
+  width: 100%;
+  padding-top: 100%;
+  background: url(../../images/placeholder.png) no-repeat 50% 50%;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.goods-item .sale-tj {
+  width: 100%;
+  padding-top: 100%;
+  background: url(../../images/sale-tj.png) no-repeat 50% 50%;
+  -webkit-background-size: contain;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.goods-item .item-text1 {
+  padding: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.goods-item .item-zg {
+  color: #fd3846;
+  border: 1rpx solid #fd3846;
+  border-radius: 40rpx;
+  padding: 2rpx 6rpx;
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-right: 4rpx;
+}
+
+.goods-item .item-title {
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+
+.goods-item .item-text2 {
+  padding: 10rpx;
+  overflow: hidden;
+}
+
+.goods-item .item-price {
+  float: left;
+  color: #fd3846;
+  font-size: 28rpx;
+}
+.goods-item .item-del {
+  float: left;
+  color: #999;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  margin: 2rpx 0 0 10rpx;
+}
+.goods-item .item-bh {
+  float: right;
+  font-size: 24rpx;
+  color: #fd3846;
+}
+
+.goods-more {
+  display: block;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.no-service {
+  margin: 100rpx auto;
+  text-align: center;
+}
+
+.no-service image {
+  display: block;
+  width: 190rpx;
+  height: 205rpx;
+  margin: 0 auto 20rpx;
+}
+
+.no-service text {
+  display: block;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 1.5;
+}
+
+/** 首页\分类 商品列表公共部分 end **/
+
+
+
+/* 商品详情\底部购物\店铺列表 加减样式start */
+
+.options {
+    float: right;
+    height: 56rpx;
+}
+.options .icon-sub, .options .icon-add {
+    width: 56rpx;
+    height: 56rpx;
+    float: left;
+}
+.options .icon-sub .sub-img, .options .icon-add .add-img {
+    width: 36rpx;
+    height: 36rpx;
+    border: 1rpx solid #dadada;
+    border-radius: 50%;
+    position: relative;
+    margin: 8rpx 0 0 8rpx;
+}
+.options .icon-sub .sub-jq, .options .icon-add .add-tj1 {
+    width: 20rpx;
+    height: 4rpx;
+    background-color: #fd3846;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.options .icon-add .add-tj2 {
+    width: 4rpx;
+    height: 20rpx;
+    background-color: #fd3846;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.options .icon-num {
+    width: 56rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    text-align: center;
+    float: left;
+    padding-top: 6rpx;
+    overflow: hidden;
+}
+
+/* 商品详情\底部购物\店铺列表 加减样式end */
+
+/* 商品详情与店铺公用 底部购物车 start */
+.footer-cart {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90rpx;
+    background-color: #efeff4;
+    z-index: 21;
+}
+.footer-cart .footer-left {
+    float: left;
+    width: 15%;
+}
+.footer-cart .icon-cart {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 100%;
+    background-color: #565656;
+    text-align: center;
+    margin: 10rpx auto;
+    position: relative;
+}
+.footer-cart .icon-cart image {
+    width: 48rpx;
+    height: 48rpx;
+    padding-top: 10rpx;
+}
+.footer-cart .cart-dot {
+    position: absolute;
+    top: -10rpx;
+    right: -6rpx;
+    min-width: 30rpx;
+    height: 30rpx;
+    border-radius: 100%;
+    background-color: #fd3846;
+    color: #fff;
+    line-height: 30rpx;
+    font-size: 24rpx;
+    padding: 2rpx;
+}
+.footer-cart .footer-middle {
+    float: left;
+    width: 60%;
+}
+.footer-cart .total-price {
+    font-size: 32rpx;
+    font-weight: bold;
+    color:#fd3846;
+    line-height: 1.5;
+}
+.footer-cart .cart-freight {
+    font-size: 24rpx;
+    color:#999;
+}
+.footer-cart .footer-right {
+    float: right;
+    width: 25%;
+}
+.footer-cart .cart-settle {
+    display: block;
+    width: 100%;
+    height: 90rpx;
+    background-color: #fd3846;
+    color: #fff;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 32rpx;
+}
+.footer-cart .cart-send {
+    display: block;
+    width: 100%;
+    height: 90rpx;
+    background-color: #565656;
+    color: #fff;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 28rpx;
+}
+/* 商品详情与店铺公用 底部购物车 end */
+
+/* 商品详情与店铺公用 遮罩层、购物车列表 start */
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: rgba(0,0,0,.3)
+}
+
+.cart-list {
+    position: fixed;
+    width: 100%;
+    max-height: 440rpx;
+    left: 0;
+    right: 0;
+    bottom: 90rpx;
+    z-index: 22;
+    background-color:  #fff;
+}
+.cart-list .list-title {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+    background-color: #f0f0f0;
+    position: relative;
+}
+.cart-list .list-title .tit{
+    font-weight: bold;
+}
+.cart-list .list-title .clear {
+    width: 80rpx;
+    height: 80rpx;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.cart-list .list-title image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 16rpx;
+}
+.cart-list .list-item {
+    padding: 20rpx;
+    overflow: auto;
+    max-height: 290rpx;
+}
+.list-item .item-wrap {
+    border-bottom: 1rpx solid #dadada;
+    overflow: hidden;
+}
+.list-item .item-title {
+    width: 50%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: left;
+    padding: 20rpx 0;
+}
+.list-item .item-price {
+    margin: 0 2%;
+    float: left;
+    width: 20%;
+    color:#fd3846;
+    padding: 20rpx 0;
+}
+.list-item .options{
+    width: 26%;
+    padding-top: 10rpx;
+}
+
+/* 商品详情与店铺公用 遮罩层、购物车列表 end */

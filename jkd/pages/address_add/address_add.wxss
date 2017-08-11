@@ -1,0 +1,72 @@
+.address-wrap {
+    padding-top: 20rpx;
+}
+.address-add {
+    margin-bottom: 20rpx;
+    background-color: #fff;
+}
+.address-add .item {
+    padding: 20rpx;
+    border-bottom: 1rpx solid #dadada;
+}
+
+.address {
+    overflow: hidden;
+}
+.address .address-tit {
+    float: left;
+    width: 20%;
+    line-height: 1.8;
+}
+.address .address-link {
+    float: left;
+    width: 80%;
+}
+.address .address-link text:nth-of-type(1) {
+    float: left;
+    width: 32rpx;
+    height: 32rpx;
+    background: url(../../images/icon-address.png) no-repeat center center;
+    background-size: 32rpx 32rpx;
+    margin-top: 10rpx;
+}
+.address .address-link input {
+    width: 80%;
+    float: left;
+}
+.address .address-link text:nth-of-type(2) {
+    float: right;
+    width: 24rpx;
+    height: 24rpx;
+    border-top:1rpx solid #666;
+    border-right: 1rpx solid #666;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: 14rpx;
+    margin-right: 10rpx;
+}
+
+.house, .phone, .contact {
+    overflow: hidden;
+}
+.house text, .phone text, .contact text {
+    float: left;
+    width: 20%;
+    line-height: 1.8;
+}
+.house input, .phone input, .contact input {
+    float: left;
+    width: 80%;
+}
+
+.save-btn {
+    padding: 0 20rpx;
+}
+.save {
+    line-height: 2;
+    background-color: #fd3846;
+    border-color: #fd3846;
+    color: #fff;
+    font-size: 28rpx;
+    padding: 10rpx 0;
+}

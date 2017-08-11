@@ -1,0 +1,41 @@
+<view class="search">
+  <view class="search-box">
+    <input placeholder="请输入商品名称" bindinput="fnSearchVal" value="{{searchVal}}" />
+    <view class="search-btn" bindtap="fnSearch">搜索</view>
+  </view>
+
+  <!-- 热搜词 -->
+  <view class="hot" wx:if="{{hotOnOff}}">
+    <view class="hot-word"  wx:for="{{hotResult.list}}" wx:for-item="hotList" bindtap="fnHotSearch" data-hot="{{hotList.lbs_data}}">{{hotList.lbs_data}}</view>
+  </view>
+
+  <!-- 含搜索商品附近的店铺 -->
+  <view class="nearby-shop" wx:if="{{shopOnOff}}">
+    <view class="nearby-tips">你附近有这些商品</view>
+    <view class="shop {{ (shopItem.is_business == 0 || shopItem.is_busy == 1) ? 'shop-disabled' : ''}}" wx:if="{{shopList.list.length > 0}}" wx:for="{{shopList.list}}" wx:for-item="shopItem">
+      <view class="shop-name">
+        <image src="../../images/icon-shop.png"></image>
+        <text>{{shopItem.shop_name}}</text>
+        <text>{{shopItem.shop_distance}}m</text>
+      </view>
+      <view class="goods-list-wrap">
+        <view class="goods-list" wx:if="{{shopItem.pro_list.length > 0}}" wx:for="{{shopItem.pro_list}}" wx:for-item="proList">
+          <navigator url="../detail/detail?shop_id={{shopItem.shop_id}}&goods_id={{proList.pro_id}}" class="goods-link" hover-class="none">
+            <view class="goods-img">
+              <image src="{{proList.pro_image}}"></image>
+            </view>
+            <view class="goods-info">
+              <view class="goods-title">{{proList.pro_name}}</view>
+              <view class="goods-price">￥{{proList.pro_price}}</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class="shop-total">
+        <text>共计{{shopItem.pro_count}}个结果</text>
+        <navigator url="../shop/shop?shopId={{shopItem.shop_id}}" hover-class="none" class="go-shop">进入店铺</navigator>
+      </view>
+    </view>
+
+  </view>
+</view>
